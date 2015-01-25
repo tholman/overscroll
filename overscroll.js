@@ -43,11 +43,11 @@ function Overscroll() {
 
     this.bindElement = function(element, position, delta) {
 
-    	// Default delta!
+    	// Default data!
     	delta = delta || 1;
+        position = position || 'top';
 
     	// Only bind events once there is something to overscroll.
-    	// TODO - Start request animation frame.
     	if( elements.top.length === 0 && elements.bottom.length === 0 ) {
     		this.init();
     	}
@@ -61,6 +61,7 @@ function Overscroll() {
 		doTheThing();
     }
 
+    // @TODO, Should I check elements heights here, incase they change?
     this.onResize = function() {
     	windowHeight = windows95.innerHeight;
     }
@@ -71,6 +72,7 @@ function Overscroll() {
     	var i;
 
     	// @TODO: Could this be cleaner, somehow?
+        // @TODO: Should this use RAF rather than not... its not very intensive
     	if( scrollPosition <= 0 ) {
     		for( i = 0; i < elements.top.length; i++ ) {
 
