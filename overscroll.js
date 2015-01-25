@@ -34,10 +34,11 @@ function Overscroll() {
 	var elements = {top: [], bottom: []};
 
     this.init = function() {
-    	
 		this.window = window;
     	this.onScroll();
     	this.onResize();
+    	this.scrollEvent = this.window.addEventListener("scroll", this.onScroll);
+    	this.resizeEvent = this.window.addEventListener("resize", this.onResize);
     }
 
     this.bindElement = function(element, position, delta) {
@@ -48,8 +49,7 @@ function Overscroll() {
     	// Only bind events once there is something to overscroll.
     	// TODO - Start request animation frame.
     	if( elements.top.length === 0 && elements.bottom.length === 0 ) {
-    		this.scrollEvent = this.window.addEventListener("scroll", this.onScroll);
-    		this.resizeEvent = this.window.addEventListener("resize", this.onResize);
+    		this.init();
     	}
 
     	var elementObject = {domElement: element, height: element.clientHeight, delta: delta};
@@ -69,8 +69,6 @@ function Overscroll() {
     var doTheThing = function() {
 
     	var i;
-
-    	console.log( scrollPosition, windowHeight );
 
     	// @TODO: Could this be cleaner, somehow?
     	if( scrollPosition <= 0 ) {
@@ -93,8 +91,6 @@ function Overscroll() {
     			var thisElement = elements.bottom[i];
     			var movement = ( ( scrollPosition - windowHeight ) * thisElement.delta );
 
-    			console.log( scrollPosition - windowHeight );
-
     			// Don't allow element to overreach its height.
     			if( movement > thisElement.height ) {
     				movement = thisElement.height;
@@ -104,6 +100,4 @@ function Overscroll() {
     		}
     	}
     }
-
-    this.init();
 }
