@@ -9,14 +9,84 @@
  *
  *********************************************/
 
-body {
-	height: 2000px;
+html {
+	height: 100%;
 }
 
-.red-square {
-	height: 500px;
+body {
+	height: 200%;
+	margin: 0px;
+}
+
+.easter-egg {
+	margin-left: -481px; // Centering!
+	z-index: 2;
 	position: fixed;
-	top: -500px;
+	height: 500px;
 	left: 50%;
-	margin-left: -500px;
+}
+
+.top-cat {
+	top: -500px;
+}
+
+.bottom-cat {
+	bottom: -500px;
+}
+
+.overscroll {
+	font-family: 'Montserrat', sans-serif;
+	transform: translateY(-50%);
+	text-align: center;
+	position: fixed;
+	margin: 0px;
+	width: 100%;
+	color: #222;
+	z-index: 1;
+	top: 50%;
+
+	h1 {
+		font-size: 100px;
+		margin: 0px;
+	}
+
+	.description {
+		font-family: monospace;
+		line-height: 22px;
+		font-size: 18px;
+		width: 650px;
+		margin: auto;
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
+
+	.links {
+		font-family: monospace;
+		font-size: 16px;
+		letter-spacing: 0.3px;
+		font-style: italic;
+
+		a {
+			margin-left: 10px;
+			margin-right: 10px;
+			color: #777;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;;
+			}
+		}
+	}
+}
+
+iframe {
+	margin-bottom: -4px;
+	margin-left: 15px;
+}
+
+.github-link {
+	position: fixed;
+	top: 0;
+	right: 0;
+	border: 0;
 }
