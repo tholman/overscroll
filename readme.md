@@ -1,6 +1,6 @@
 # Overscroll.js
 
-A tiny javascript library, to capture the moments when you've scrolled more than the screen allows (osx/ios)... so we can sneak in some little easter eggs. [Here's a live demo](http://tholman.com/overscroll)! ... [And here's a video](http://tholman.com/overscroll/video)!.
+A tiny javascript library, to capture the moments when you've scrolled more than the screen allows (osx/ios)... so we can sneak in some little easter eggs. [Here's a live demo](http://tholman.com/overscroll), [and here's a video ](http://tholman.com/overscroll/video)!
 
 ### Instructions
 
@@ -8,7 +8,7 @@ A tiny javascript library, to capture the moments when you've scrolled more than
 
 #### HTML
 
-There aren't any restrictions for the `html` overscroll can bind too, that said, you do need to position them (ideally off screen) yourself. Overscroll will only handle their movement.
+There aren't any restrictions for the `html` overscroll can bind too, that said, you do need to position them (ideally off screen) yourself. Overscroll will handle their movement.
 
 ```html
 <!-- Any element works, really -->
@@ -16,7 +16,7 @@ There aren't any restrictions for the `html` overscroll can bind too, that said,
 ```
 
 #### CSS
-You'll need to position the element you want to slide in/out of the screen manually. Since `overscroll` edits the transform of your element, you'll need to avoid using your own transforms on it.
+You'll need to position the element you want to slide in/out of the screen initially. Since `overscroll` edits the transform of your element, you should try to avoid using transforms on it too.
 
 That said, your positioning doesn't need to be anything too complex. For example:
 
@@ -37,11 +37,11 @@ That said, your positioning doesn't need to be anything too complex. For example
 }
 ```
 
-Above, the `margin-top: -500px` hides the element above the top of the screen, since overscroll will handle showing it when the screen is scrolled in that direction.
+Above, the `margin-top: -500px` hides the element above the top of the screen, since overscroll will handle showing it when the there is overscroll in that direction.
 
 #### JS
 
-`Overscroll.js` is fairly straight forward when it comes to kicking it off, you'll need to create a new instance of overscroll, and then bind elements to it once they have been rendered. You can do this with `document.querySelector`.
+`Overscroll.js` is fairly straight forward when it comes to kicking it off, you'll need to create a new instance of overscroll (and include the script in the page), and then bind elements to it once they have been rendered. You can do this with `document.querySelector`.
 
 ```html
 <img class="easter-egg-element" src="./img/awesome-source.png" />
