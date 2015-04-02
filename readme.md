@@ -94,7 +94,7 @@ Overscroll on the top:
 
 ###Browser support
 
-Overscroll has been tested in the latest stable builds of Safari, Chrome... IE & Firefox don't really have the "overscroll" zones, so they won't work. Its just for fun... so not the end of the world ;)
+Overscroll has been tested in the latest stable builds of Safari and ~~Chrome~~ (Chrome has removed this as of version 40)... IE & Firefox don't really have the "overscroll" zones, so they won't work. Its just for fun... so not the end of the world ;)
 
 ### License
 
