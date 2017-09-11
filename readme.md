@@ -92,7 +92,7 @@ Overscroll on the bottom:
 Overscroll on the top:
 ![Overscroll.js doing its thing](http://i.imgur.com/sHmWDsR.png "Overscroll Top")
 
-###Browser support
+### Browser support
 
 Overscroll has been tested in the latest stable builds of Safari and Chrome. IE & Firefox don't really have the "overscroll" zones, so they won't work. Its just for fun... so not the end of the world ;)
 
